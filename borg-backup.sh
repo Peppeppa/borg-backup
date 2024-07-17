@@ -53,8 +53,8 @@ borg create                         \
     --exclude-caches                \
     --exclude '/home/*/.cache/*'    \
     --exclude '/var/tmp/*'          \
-    --patterns-from ${DIR}'/patterns.lst' \
       ::${hostname}-${now}            \
+    --patterns-from ${DIR}'/patterns.lst' 
 
 backup_exit=$?
 
