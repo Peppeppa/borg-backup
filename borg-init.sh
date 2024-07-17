@@ -32,6 +32,8 @@ else
     echo "Init Repostory:"
     borg init --encryption=repokey ${BORG_REPO}
     echo
+    echo "Exporting Key"
+    borg key export ${BORG_REPO} ./key.txt
     echo "Create Log Directory"
     mkdir ${LOG_DIRECTORY}
 fi
