@@ -15,7 +15,8 @@ export BORG_PASSPHRASE=${ENV_BORG_PASSPHRASE}
 export BORG_RESTORE_MOUNT=${ENV_BORG_RESTORE_MOUNT}
 LOG=${ENV_BORG_LOG_DIRECTORY}${ENV_BORG_LOG_FILE}
 
-
+hostname=$(hostname)
+now=$(date +"%Y-%m-%d_%H-%M-%S")
 
 ##
 ## write output to log file
