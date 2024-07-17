@@ -50,11 +50,11 @@ borg create                         \
     --stats                         \
     --show-rc                       \
     --compression lz4               \
-#    --exclude-caches                \
-#    --exclude '/home/*/.cache/*'    \
-#    --exclude '/var/tmp/*'          \
-    ::'{hostname}-{now}'            \
-    --patterns-from ${DIR}'/patterns.lst'
+    --exclude-caches                \
+    --exclude '/home/*/.cache/*'    \
+    --exclude '/var/tmp/*'          \
+    --patterns-from ${DIR}'/patterns.lst' \
+      ::${hostname}-${now}            \
 
 backup_exit=$?
 
