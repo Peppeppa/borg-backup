@@ -13,6 +13,7 @@ export BORG_REPO=${ENV_BORG_REPO}
 # See the section "Passphrase notes" for more infos.
 export BORG_PASSPHRASE=${ENV_BORG_PASSPHRASE}
 export BORG_RESTORE_MOUNT=${ENV_BORG_RESTORE_MOUNT}
+export BORG_TARGET=${ENV_BORG_TARGET_DIR}
 LOG=${ENV_BORG_LOG_DIRECTORY}${ENV_BORG_LOG_FILE}
 
 hostname=$(hostname)
@@ -53,8 +54,9 @@ borg create                         \
     --exclude-caches                \
     --exclude '/home/*/.cache/*'    \
     --exclude '/var/tmp/*'          \
-      ::${hostname}-${now}            \
-    --patterns-from ${DIR}'/patterns.lst' 
+      ::${hostname}-${now} ${BORG_TARGET}            \
+    
+#    --patterns-from ${DIR}'/patterns.lst' 
 
 backup_exit=$?
 
