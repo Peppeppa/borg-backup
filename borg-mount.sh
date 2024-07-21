@@ -38,7 +38,7 @@ fi
 ##
 
 mkdir -p ${BORG_RESTORE_MOUNT}
-chmod a-w ${BORG_RESTORE_MOUNT}
+chmod 755 ${BORG_RESTORE_MOUNT}
 
 echo "Mounting Repository to ${BORG_RESTORE_MOUNT}"
 
